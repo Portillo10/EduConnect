@@ -3,6 +3,7 @@ import Logo from "../assets/logo.svg";
 import { useAuthStore } from "../store/Auth.ts";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Layout from "../layouts/Layout.jsx";
 
 export default function Login() {
   const { register, handleSubmit } = useForm();
@@ -15,7 +16,7 @@ export default function Login() {
   });
 
   return (
-    <div className="flex flex-col w-full h-screen bg-white items-center">
+    <Layout>
       <h1 className="w-full flex items-center py-3 px-8 gap-x-4 border-b-2 border-gray-200">
         <img src={Logo} alt="" />{" "}
         <p className="font-bold text-xl">EduConnect</p>
@@ -61,6 +62,6 @@ export default function Login() {
           Regístrate
         </button>
       </main>
-    </div>
+    </Layout>
   );
 }
